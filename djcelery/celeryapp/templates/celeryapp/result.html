@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Result</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,20 +11,20 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Celery Task</a>
+    <a class="navbar-brand" href="#">Result</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">Home</a>
+          <a class="nav-link" href="{% url 'home' %}">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
+          <a class="nav-link" href="{% url 'about' %}">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          <a class="nav-link" href="{% url 'contact' %}">Link</a>
         </li>    
       </ul>
     </div>
@@ -32,9 +32,12 @@
 </nav>
 
 <div class="container-fluid mt-3">
-  {% if result.id %}
-  <p> Task Id : {{ result.id }}</p>
-  <a href="{% url 'check_result' result.id %}">Check Task Result</a>
+  {% if result %}
+  <h1>Task ID: {{result.id}}</h1>
+  <h2>Task ID: {{result.task_id}}</h2>
+  <h3>Task state: {{result.state}}</h3>
+  <h4>Task status: {{result.status}}</h4>
+  <h5>Task result: {{result.result}}</h5>
   {% endif %}
 </div>
 
